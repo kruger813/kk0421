@@ -2,30 +2,25 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
 // Parent class of object generated at checkout
 public abstract class RentalAgreement {
-    // Enum for tool codes
-    enum ToolCode{
-        LADW, CHNS, JAKR, JAKD
-    }
 
     // Rental Agreement values
-    private ToolCode toolCode;
-    private String toolType;
-    private String toolBrand;
-    private int rentalDays;
-    private Date checkOutDate;
-    private Date dueDate;
-    private BigDecimal dailyCharge;
-    private int chargeDays;
-    private BigDecimal preDiscountCharge;
-    private int discountPercent;
-    private BigDecimal discountAmount;
-    private BigDecimal finalCharge;
+    protected ToolCode toolCode;
+    protected String toolType;
+    protected String toolBrand;
+    protected int rentalDays;
+    protected Date checkOutDate;
+    protected Date dueDate;
+    protected BigDecimal dailyCharge;
+    protected int chargeDays;
+    protected BigDecimal preDiscountCharge;
+    protected int discountPercent;
+    protected BigDecimal discountAmount;
+    protected BigDecimal finalCharge;
 
     // Prints Rental Agreement to the console
     public void printRentalAgreement(){
@@ -64,7 +59,7 @@ public abstract class RentalAgreement {
     }
 
     // Method used to calculate the Final Charge based on Pre-discount Charge and Discount Amount
-    protected  BigDecimal calculateFinalCharge(){
+    protected BigDecimal calculateFinalCharge(){
         return preDiscountCharge.subtract(discountAmount);
     }
 
