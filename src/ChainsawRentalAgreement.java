@@ -2,17 +2,16 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 
-public class LadderRentalAgreement extends RentalAgreement{
-
+public class ChainsawRentalAgreement extends RentalAgreement{
     // Rental Agreement constructor for ladders
-    public LadderRentalAgreement(int rentalDays, Date checkOutDate, int discountPercent){
-        toolCode = ToolCode.LADW;
-        toolType = "Ladder";
-        toolBrand = "Werner";
+    public ChainsawRentalAgreement(int rentalDays, Date checkOutDate, int discountPercent){
+        toolCode = ToolCode.CHNS;
+        toolType = "Chainsaw";
+        toolBrand = "Stihl";
         this.rentalDays = rentalDays;
         this.checkOutDate = checkOutDate;
         dueDate = calculateDueDate();
-        dailyCharge = new BigDecimal("1.99");
+        dailyCharge = new BigDecimal("1.49");
         chargeDays = calculateChargeDays();
         preDiscountCharge = calculatePreDiscountCharge();
         this.discountPercent = discountPercent;
@@ -30,9 +29,8 @@ public class LadderRentalAgreement extends RentalAgreement{
         // Iterate through every rental day
         for(int i = 0; i < rentalDays; i++){
             c.add(Calendar.DATE, 1);
-            // Make sure it is not a holiday
-            if(!((Calendar.MONTH == 7 && Calendar.DATE == 4) ||
-                    (Calendar.MONTH == 9 && Calendar.DAY_OF_WEEK == Calendar.MONDAY && Calendar.DAY_OF_MONTH <= 7))){
+            // Make sure it is not a weekend
+            if(!(Calendar.DAY_OF_WEEK == Calendar.SATURDAY || Calendar.DAY_OF_WEEK == Calendar.SUNDAY)){
                 chargeDays++;
             }
         }
