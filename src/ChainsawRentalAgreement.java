@@ -5,9 +5,13 @@ import java.util.Date;
 public class ChainsawRentalAgreement extends RentalAgreement{
     // Rental Agreement constructor for ladders
     public ChainsawRentalAgreement(int rentalDays, Date checkOutDate, int discountPercent){
-        toolCode = ToolCode.CHNS;
+        switch (toolCode){
+            case CHNS:
+                this.toolCode = ToolCode.CHNS;
+                toolBrand = "Stihl";
+                break;
+        }
         toolType = "Chainsaw";
-        toolBrand = "Stihl";
         this.rentalDays = rentalDays;
         this.checkOutDate = checkOutDate;
         dueDate = calculateDueDate();

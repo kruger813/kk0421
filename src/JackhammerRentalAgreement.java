@@ -2,21 +2,24 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 
-public class LadderRentalAgreement extends RentalAgreement{
-
+public class JackhammerRentalAgreement extends  RentalAgreement{
     // Rental Agreement constructor for ladders
-    public LadderRentalAgreement(int rentalDays, Date checkOutDate, int discountPercent){
+    public JackhammerRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){
         switch (toolCode){
-            case LADW:
-                this.toolCode = ToolCode.LADW;
-                toolBrand = "Werner";
+            case JAKR:
+                this.toolCode = ToolCode.JAKR;
+                toolBrand = "Ridgid";
+                break;
+            case JAKD:
+                this.toolCode = ToolCode.JAKD;
+                toolBrand = "DeWalt";
                 break;
         }
-        toolType = "Ladder";
+        toolType = "Jackhammer";
         this.rentalDays = rentalDays;
         this.checkOutDate = checkOutDate;
         dueDate = calculateDueDate();
-        dailyCharge = new BigDecimal("1.99");
+        dailyCharge = new BigDecimal("2.99");
         chargeDays = calculateChargeDays();
         preDiscountCharge = calculatePreDiscountCharge();
         this.discountPercent = discountPercent;
@@ -34,9 +37,10 @@ public class LadderRentalAgreement extends RentalAgreement{
         // Iterate through every rental day
         for(int i = 0; i < rentalDays; i++){
             c.add(Calendar.DATE, 1);
-            // Make sure it is not a holiday
+            // Make sure it is not a weekend or holiday
             if(!((Calendar.MONTH == 7 && Calendar.DATE == 4) ||
-                    (Calendar.MONTH == 9 && Calendar.DAY_OF_WEEK == Calendar.MONDAY && Calendar.DAY_OF_MONTH <= 7))){
+                    (Calendar.MONTH == 9 && Calendar.DAY_OF_WEEK == Calendar.MONDAY && Calendar.DAY_OF_MONTH <= 7) ||
+                    Calendar.DAY_OF_WEEK == Calendar.SATURDAY || Calendar.DAY_OF_WEEK == Calendar.SUNDAY)){
                 chargeDays++;
             }
         }
