@@ -5,7 +5,7 @@ import java.util.Date;
 public class LadderRentalAgreement extends RentalAgreement{
 
     // Rental Agreement constructor for ladders
-    public LadderRentalAgreement(int rentalDays, Date checkOutDate, int discountPercent){
+    public LadderRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){
         switch (toolCode){
             case LADW:
                 this.toolCode = ToolCode.LADW;
@@ -35,8 +35,7 @@ public class LadderRentalAgreement extends RentalAgreement{
         for(int i = 0; i < rentalDays; i++){
             c.add(Calendar.DATE, 1);
             // Make sure it is not a holiday
-            if(!((Calendar.MONTH == 7 && Calendar.DATE == 4) ||
-                    (Calendar.MONTH == 9 && Calendar.DAY_OF_WEEK == Calendar.MONDAY && Calendar.DAY_OF_MONTH <= 7))){
+            if(!isHoliday(c, false)){
                 chargeDays++;
             }
         }

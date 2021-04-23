@@ -63,6 +63,23 @@ public abstract class RentalAgreement {
         return preDiscountCharge.subtract(discountAmount);
     }
 
+    // Method to detect if a date falls on a weekend
+    protected boolean isWeekend(Calendar c){
+        return (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY);
+    }
+
+    // Method to detect if a date falls on a holiday
+    protected boolean isHoliday(Calendar c, boolean carryOverMode){
+        return ((c.get(Calendar.MONTH) == Calendar.JULY && c.get(Calendar.DATE) == 4) ||
+                (c.get(Calendar.MONTH) == Calendar.JULY && c.get(Calendar.DATE) == 3 && c.get(Calendar.DAY_OF_WEEK) ==
+                        Calendar.FRIDAY) && carryOverMode ||
+                (c.get(Calendar.MONTH) == Calendar.JULY && c.get(Calendar.DATE) == 5 && c.get(Calendar.DAY_OF_WEEK) ==
+                        Calendar.MONDAY) && carryOverMode ||
+                (c.get(Calendar.MONTH) == Calendar.SEPTEMBER && c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY &&
+                        c.get(Calendar.DAY_OF_MONTH) <= 7));
+
+    }
+
     abstract int calculateChargeDays();
 
 

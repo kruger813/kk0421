@@ -38,9 +38,7 @@ public class JackhammerRentalAgreement extends  RentalAgreement{
         for(int i = 0; i < rentalDays; i++){
             c.add(Calendar.DATE, 1);
             // Make sure it is not a weekend or holiday
-            if(!((Calendar.MONTH == 7 && Calendar.DATE == 4) ||
-                    (Calendar.MONTH == 9 && Calendar.DAY_OF_WEEK == Calendar.MONDAY && Calendar.DAY_OF_MONTH <= 7) ||
-                    Calendar.DAY_OF_WEEK == Calendar.SATURDAY || Calendar.DAY_OF_WEEK == Calendar.SUNDAY)){
+            if(!(isHoliday(c, true) || isWeekend(c))){
                 chargeDays++;
             }
         }

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ChainsawRentalAgreement extends RentalAgreement{
     // Rental Agreement constructor for ladders
-    public ChainsawRentalAgreement(int rentalDays, Date checkOutDate, int discountPercent){
+    public ChainsawRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){
         switch (toolCode){
             case CHNS:
                 this.toolCode = ToolCode.CHNS;
@@ -34,7 +34,7 @@ public class ChainsawRentalAgreement extends RentalAgreement{
         for(int i = 0; i < rentalDays; i++){
             c.add(Calendar.DATE, 1);
             // Make sure it is not a weekend
-            if(!(Calendar.DAY_OF_WEEK == Calendar.SATURDAY || Calendar.DAY_OF_WEEK == Calendar.SUNDAY)){
+            if(!isWeekend(c)){
                 chargeDays++;
             }
         }
