@@ -7,6 +7,7 @@ import java.util.Date;
 public class ChainsawRentalAgreement extends RentalAgreement{
     // Rental Agreement constructor for ladders
     public ChainsawRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){
+        // There is no reason to use a switch statement here except to make adding new tool codes easier.
         switch (toolCode){
             case CHNS:
                 this.toolCode = ToolCode.CHNS;

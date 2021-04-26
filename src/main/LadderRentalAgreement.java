@@ -8,6 +8,7 @@ public class LadderRentalAgreement extends RentalAgreement{
 
     // Rental Agreement constructor for ladders
     public LadderRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){
+        // There is no reason to use a switch statement here except to make adding new tool codes easier.
         switch (toolCode){
             case LADW:
                 this.toolCode = ToolCode.LADW;
