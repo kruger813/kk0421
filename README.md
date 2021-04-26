@@ -8,7 +8,7 @@ This is a programming demonstration for an interview process.
 This project is written in Java.
 
 # Tests
-Unit tests for this project can be found in \src\test. The required tests from the specification document can be found at \src\test\SpecTests.java
+Unit tests for this project can be found in \src\test. The required tests from the specification document can be found at \src\test\SpecTest.java
 
 # How to use?
 You can greate a Checkout object using the following constructor:
