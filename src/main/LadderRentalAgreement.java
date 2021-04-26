@@ -26,8 +26,7 @@ public class LadderRentalAgreement extends RentalAgreement{
         finalCharge = calculateFinalCharge();
     }
 
-    //Method used to calculate the Charge Days based on
-    //TODO look into way to do this without a loop to increase efficiency at higher rental days
+    //Method used to calculate the Charge Days based on Check Out Date and Rental Days
     @Override
     protected int calculateChargeDays() {
         int chargeDays = 0;

@@ -8,7 +8,8 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-public class SpecTests {
+// Tests scenarios from the specification document
+public class SpecTest {
     @Test
     public void test1(){
         Assert.assertThrows(InvalidInputException.class, () -> {

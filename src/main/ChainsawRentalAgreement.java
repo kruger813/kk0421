@@ -25,21 +25,24 @@ public class ChainsawRentalAgreement extends RentalAgreement{
         finalCharge = calculateFinalCharge();
     }
 
-    //Method used to calculate the Charge Days based on
-    //TODO look into way to do this without a loop to increase efficiency at higher rental days
+    //Method used to calculate the Charge Days based on Check Out Date and Rental Days
     @Override
     protected int calculateChargeDays() {
-        int chargeDays = 0;
+        int chargeDays = (rentalDays / 7) * 5;
         Calendar c = Calendar.getInstance();
         c.setTime(checkOutDate);
-        // Iterate through every rental day
-        for(int i = 0; i < rentalDays; i++){
-            c.add(Calendar.DATE, 1);
-            // Make sure it is not a weekend
-            if(!isWeekend(c)){
-                chargeDays++;
-            }
+        // Calculate what day of week rental ends on
+        int endDay = c.get(Calendar.DAY_OF_WEEK) + (rentalDays % 7);
+        // See if the last week of the rental rolled over a weekend
+        if(endDay == 7){
+            chargeDays += (rentalDays % 7) - 1;
         }
-        return  chargeDays;
+        else if(endDay > 7){
+            chargeDays += (rentalDays % 7) - 2;
+        }
+        else{
+            chargeDays += rentalDays % 7;
+        }
+        return chargeDays;
     }
 }

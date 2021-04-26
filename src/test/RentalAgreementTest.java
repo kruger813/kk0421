@@ -36,7 +36,7 @@ public class RentalAgreementTest {
     public void customPrintTest(){
         ToolCode code = ToolCode.JAKR;
         int month = 7;
-        int day = 2;
+        int day = 5;
         int year =  2020;
         int days = 4;
         int discount = 50;
@@ -59,7 +59,7 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        rental0.printRentalAgreement();
+        System.out.println(c.get(Calendar.DAY_OF_WEEK));
     }
 
     @Test
