@@ -1,3 +1,5 @@
+package main;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DateFormat;
@@ -8,7 +10,7 @@ import java.util.Date;
 // Parent class of object generated at checkout
 public abstract class RentalAgreement {
 
-    // Rental Agreement values
+    // Rental Agreement variables
     protected ToolCode toolCode;
     protected String toolType;
     protected String toolBrand;
@@ -21,6 +23,55 @@ public abstract class RentalAgreement {
     protected int discountPercent;
     protected BigDecimal discountAmount;
     protected BigDecimal finalCharge;
+
+    // Getters used for testing
+    public ToolCode getToolCode() {
+        return toolCode;
+    }
+
+    public String getToolType() {
+        return toolType;
+    }
+
+    public String getToolBrand() {
+        return toolBrand;
+    }
+
+    public int getRentalDays() {
+        return rentalDays;
+    }
+
+    public Date getCheckOutDate() {
+        return (Date) checkOutDate.clone();
+    }
+
+    public Date getDueDate() {
+        return (Date) dueDate.clone();
+    }
+
+    public BigDecimal getDailyCharge() {
+        return dailyCharge;
+    }
+
+    public int getChargeDays() {
+        return chargeDays;
+    }
+
+    public BigDecimal getPreDiscountCharge() {
+        return preDiscountCharge;
+    }
+
+    public int getDiscountPercent() {
+        return discountPercent;
+    }
+
+    public BigDecimal getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public BigDecimal getFinalCharge() {
+        return finalCharge;
+    }
 
     // Prints Rental Agreement to the console
     public void printRentalAgreement(){
@@ -80,6 +131,7 @@ public abstract class RentalAgreement {
 
     }
 
+    // Implemented by child classes
     abstract int calculateChargeDays();
 
 

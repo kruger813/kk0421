@@ -1,3 +1,5 @@
+package main;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -5,14 +7,14 @@ import java.util.Date;
 
 public class Checkout {
 
-    // Checkout values
+    // Checkout variables
     private String toolCode;
     private int rentalDayCount;
     private int discountPercent;
     private String checkOutDate;
     private Date validatedDate;
 
-    // Checkout constructor
+    // Checkout constructor requires Tool Code, Rental Day Count, Discount Percent, and Check Out Date
     public Checkout(String toolCode, int rentalDayCount, int discountPercent, String checkOutDate){
         this.toolCode = toolCode;
         this.rentalDayCount = rentalDayCount;
@@ -48,7 +50,7 @@ public class Checkout {
     }
 
     // Method used to generate Rental Agreement from current Checkout
-    public RentalAgreement generateRentalAgreement() throws ParseException {
+    public RentalAgreement generateRentalAgreement(){
         switch (toolCode){
             case "LADW":
                return new LadderRentalAgreement(ToolCode.LADW, rentalDayCount, validatedDate, discountPercent);

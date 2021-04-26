@@ -1,8 +1,10 @@
+package test;
+
+import main.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -87,19 +89,19 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        Assert.assertSame(ToolCode.JAKR, rental0.toolCode);
-        Assert.assertEquals("Jackhammer", rental0.toolType);
-        Assert.assertEquals("Ridgid", rental0.toolBrand);
-        Assert.assertEquals(5, rental0.rentalDays);
-        Assert.assertEquals(c.getTime(), rental0.checkOutDate);
+        Assert.assertSame(ToolCode.JAKR, rental0.getToolCode());
+        Assert.assertEquals("Jackhammer", rental0.getToolType());
+        Assert.assertEquals("Ridgid", rental0.getToolBrand());
+        Assert.assertEquals(5, rental0.getRentalDays());
+        Assert.assertEquals(c.getTime(), rental0.getCheckOutDate());
         c.add(Calendar.DATE, 5);
-        Assert.assertEquals(c.getTime(), rental0.dueDate);
-        Assert.assertEquals(new BigDecimal("2.99"), rental0.dailyCharge);
-        Assert.assertEquals(2, rental0.chargeDays);
-        Assert.assertEquals(new BigDecimal("5.98"), rental0.preDiscountCharge);
-        Assert.assertEquals(15, rental0.discountPercent);
-        Assert.assertEquals(new BigDecimal("0.90"), rental0.discountAmount);
-        Assert.assertEquals(new BigDecimal("5.08"), rental0.finalCharge);
+        Assert.assertEquals(c.getTime(), rental0.getDueDate());
+        Assert.assertEquals(new BigDecimal("2.99"), rental0.getDailyCharge());
+        Assert.assertEquals(2, rental0.getChargeDays());
+        Assert.assertEquals(new BigDecimal("5.98"), rental0.getPreDiscountCharge());
+        Assert.assertEquals(15, rental0.getDiscountPercent());
+        Assert.assertEquals(new BigDecimal("0.90"), rental0.getDiscountAmount());
+        Assert.assertEquals(new BigDecimal("5.08"), rental0.getFinalCharge());
     }
 
     @Test
@@ -129,19 +131,19 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        Assert.assertSame(ToolCode.LADW, rental0.toolCode);
-        Assert.assertEquals("Ladder", rental0.toolType);
-        Assert.assertEquals("Werner", rental0.toolBrand);
-        Assert.assertEquals(3, rental0.rentalDays);
-        Assert.assertEquals(c.getTime(), rental0.checkOutDate);
+        Assert.assertSame(ToolCode.LADW, rental0.getToolCode());
+        Assert.assertEquals("Ladder", rental0.getToolType());
+        Assert.assertEquals("Werner", rental0.getToolBrand());
+        Assert.assertEquals(3, rental0.getRentalDays());
+        Assert.assertEquals(c.getTime(), rental0.getCheckOutDate());
         c.add(Calendar.DATE, 3);
-        Assert.assertEquals(c.getTime(), rental0.dueDate);
-        Assert.assertEquals(new BigDecimal("1.99"), rental0.dailyCharge);
-        Assert.assertEquals(2, rental0.chargeDays);
-        Assert.assertEquals(new BigDecimal("3.98"), rental0.preDiscountCharge);
-        Assert.assertEquals(10, rental0.discountPercent);
-        Assert.assertEquals(new BigDecimal("0.40"), rental0.discountAmount);
-        Assert.assertEquals(new BigDecimal("3.58"), rental0.finalCharge);
+        Assert.assertEquals(c.getTime(), rental0.getDueDate());
+        Assert.assertEquals(new BigDecimal("1.99"), rental0.getDailyCharge());
+        Assert.assertEquals(2, rental0.getChargeDays());
+        Assert.assertEquals(new BigDecimal("3.98"), rental0.getPreDiscountCharge());
+        Assert.assertEquals(10, rental0.getDiscountPercent());
+        Assert.assertEquals(new BigDecimal("0.40"), rental0.getDiscountAmount());
+        Assert.assertEquals(new BigDecimal("3.58"), rental0.getFinalCharge());
     }
 
     @Test
@@ -171,19 +173,19 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        Assert.assertSame(ToolCode.CHNS, rental0.toolCode);
-        Assert.assertEquals("Chainsaw", rental0.toolType);
-        Assert.assertEquals("Stihl", rental0.toolBrand);
-        Assert.assertEquals(5, rental0.rentalDays);
-        Assert.assertEquals(c.getTime(), rental0.checkOutDate);
+        Assert.assertSame(ToolCode.CHNS, rental0.getToolCode());
+        Assert.assertEquals("Chainsaw", rental0.getToolType());
+        Assert.assertEquals("Stihl", rental0.getToolBrand());
+        Assert.assertEquals(5, rental0.getRentalDays());
+        Assert.assertEquals(c.getTime(), rental0.getCheckOutDate());
         c.add(Calendar.DATE, 5);
-        Assert.assertEquals(c.getTime(), rental0.dueDate);
-        Assert.assertEquals(new BigDecimal("1.49"), rental0.dailyCharge);
-        Assert.assertEquals(3, rental0.chargeDays);
-        Assert.assertEquals(new BigDecimal("4.47"), rental0.preDiscountCharge);
-        Assert.assertEquals(25, rental0.discountPercent);
-        Assert.assertEquals(new BigDecimal("1.12"), rental0.discountAmount);
-        Assert.assertEquals(new BigDecimal("3.35"), rental0.finalCharge);
+        Assert.assertEquals(c.getTime(), rental0.getDueDate());
+        Assert.assertEquals(new BigDecimal("1.49"), rental0.getDailyCharge());
+        Assert.assertEquals(3, rental0.getChargeDays());
+        Assert.assertEquals(new BigDecimal("4.47"), rental0.getPreDiscountCharge());
+        Assert.assertEquals(25, rental0.getDiscountPercent());
+        Assert.assertEquals(new BigDecimal("1.12"), rental0.getDiscountAmount());
+        Assert.assertEquals(new BigDecimal("3.35"), rental0.getFinalCharge());
     }
 
     @Test
@@ -213,19 +215,19 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        Assert.assertSame(ToolCode.JAKD, rental0.toolCode);
-        Assert.assertEquals("Jackhammer", rental0.toolType);
-        Assert.assertEquals("DeWalt", rental0.toolBrand);
-        Assert.assertEquals(6, rental0.rentalDays);
-        Assert.assertEquals(c.getTime(), rental0.checkOutDate);
+        Assert.assertSame(ToolCode.JAKD, rental0.getToolCode());
+        Assert.assertEquals("Jackhammer", rental0.getToolType());
+        Assert.assertEquals("DeWalt", rental0.getToolBrand());
+        Assert.assertEquals(6, rental0.getRentalDays());
+        Assert.assertEquals(c.getTime(), rental0.getCheckOutDate());
         c.add(Calendar.DATE, 6);
-        Assert.assertEquals(c.getTime(), rental0.dueDate);
-        Assert.assertEquals(new BigDecimal("2.99"), rental0.dailyCharge);
-        Assert.assertEquals(3, rental0.chargeDays);
-        Assert.assertEquals(new BigDecimal("8.97"), rental0.preDiscountCharge);
-        Assert.assertEquals(0, rental0.discountPercent);
-        Assert.assertEquals(new BigDecimal("0.00"), rental0.discountAmount);
-        Assert.assertEquals(new BigDecimal("8.97"), rental0.finalCharge);
+        Assert.assertEquals(c.getTime(), rental0.getDueDate());
+        Assert.assertEquals(new BigDecimal("2.99"), rental0.getDailyCharge());
+        Assert.assertEquals(3, rental0.getChargeDays());
+        Assert.assertEquals(new BigDecimal("8.97"), rental0.getPreDiscountCharge());
+        Assert.assertEquals(0, rental0.getDiscountPercent());
+        Assert.assertEquals(new BigDecimal("0.00"), rental0.getDiscountAmount());
+        Assert.assertEquals(new BigDecimal("8.97"), rental0.getFinalCharge());
     }
 
     @Test
@@ -255,19 +257,19 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        Assert.assertSame(ToolCode.JAKR, rental0.toolCode);
-        Assert.assertEquals("Jackhammer", rental0.toolType);
-        Assert.assertEquals("Ridgid", rental0.toolBrand);
-        Assert.assertEquals(9, rental0.rentalDays);
-        Assert.assertEquals(c.getTime(), rental0.checkOutDate);
+        Assert.assertSame(ToolCode.JAKR, rental0.getToolCode());
+        Assert.assertEquals("Jackhammer", rental0.getToolType());
+        Assert.assertEquals("Ridgid", rental0.getToolBrand());
+        Assert.assertEquals(9, rental0.getRentalDays());
+        Assert.assertEquals(c.getTime(), rental0.getCheckOutDate());
         c.add(Calendar.DATE, 9);
-        Assert.assertEquals(c.getTime(), rental0.dueDate);
-        Assert.assertEquals(new BigDecimal("2.99"), rental0.dailyCharge);
-        Assert.assertEquals(5, rental0.chargeDays);
-        Assert.assertEquals(new BigDecimal("14.95"), rental0.preDiscountCharge);
-        Assert.assertEquals(0, rental0.discountPercent);
-        Assert.assertEquals(new BigDecimal("0.00"), rental0.discountAmount);
-        Assert.assertEquals(new BigDecimal("14.95"), rental0.finalCharge);
+        Assert.assertEquals(c.getTime(), rental0.getDueDate());
+        Assert.assertEquals(new BigDecimal("2.99"), rental0.getDailyCharge());
+        Assert.assertEquals(5, rental0.getChargeDays());
+        Assert.assertEquals(new BigDecimal("14.95"), rental0.getPreDiscountCharge());
+        Assert.assertEquals(0, rental0.getDiscountPercent());
+        Assert.assertEquals(new BigDecimal("0.00"), rental0.getDiscountAmount());
+        Assert.assertEquals(new BigDecimal("14.95"), rental0.getFinalCharge());
     }
 
     @Test
@@ -297,18 +299,18 @@ public class RentalAgreementTest {
             default:
                 rental0 = null;
         }
-        Assert.assertSame(ToolCode.JAKR, rental0.toolCode);
-        Assert.assertEquals("Jackhammer", rental0.toolType);
-        Assert.assertEquals("Ridgid", rental0.toolBrand);
-        Assert.assertEquals(4, rental0.rentalDays);
-        Assert.assertEquals(c.getTime(), rental0.checkOutDate);
+        Assert.assertSame(ToolCode.JAKR, rental0.getToolCode());
+        Assert.assertEquals("Jackhammer", rental0.getToolType());
+        Assert.assertEquals("Ridgid", rental0.getToolBrand());
+        Assert.assertEquals(4, rental0.getRentalDays());
+        Assert.assertEquals(c.getTime(), rental0.getCheckOutDate());
         c.add(Calendar.DATE, 4);
-        Assert.assertEquals(c.getTime(), rental0.dueDate);
-        Assert.assertEquals(new BigDecimal("2.99"), rental0.dailyCharge);
-        Assert.assertEquals(1, rental0.chargeDays);
-        Assert.assertEquals(new BigDecimal("2.99"), rental0.preDiscountCharge);
-        Assert.assertEquals(50, rental0.discountPercent);
-        Assert.assertEquals(new BigDecimal("1.50"), rental0.discountAmount);
-        Assert.assertEquals(new BigDecimal("1.49"), rental0.finalCharge);
+        Assert.assertEquals(c.getTime(), rental0.getDueDate());
+        Assert.assertEquals(new BigDecimal("2.99"), rental0.getDailyCharge());
+        Assert.assertEquals(1, rental0.getChargeDays());
+        Assert.assertEquals(new BigDecimal("2.99"), rental0.getPreDiscountCharge());
+        Assert.assertEquals(50, rental0.getDiscountPercent());
+        Assert.assertEquals(new BigDecimal("1.50"), rental0.getDiscountAmount());
+        Assert.assertEquals(new BigDecimal("1.49"), rental0.getFinalCharge());
     }
 }
