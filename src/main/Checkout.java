@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// Class used to validate input and generate Rental Agreement
 public class Checkout {
 
     // Checkout variables

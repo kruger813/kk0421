@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 
+// Child Rental Agreement Class
 public class ChainsawRentalAgreement extends RentalAgreement{
     // Rental Agreement constructor for ladders
     public ChainsawRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){

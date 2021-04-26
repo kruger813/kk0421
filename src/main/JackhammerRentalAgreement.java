@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 
+// Child Rental Agreement Class
 public class JackhammerRentalAgreement extends  RentalAgreement{
     // Rental Agreement constructor for ladders
     public JackhammerRentalAgreement(ToolCode toolCode, int rentalDays, Date checkOutDate, int discountPercent){
